@@ -11,7 +11,6 @@ public class LiveRoomModel extends BaseModel {
 
 
     /**
-     *
      * @param roomId
      */
     public void requestLiveroomData(String roomId) {
@@ -19,10 +18,20 @@ public class LiveRoomModel extends BaseModel {
         // 模拟请求过程，请求过程
 
         mModelCallback.showLoading();
-        mModelCallback.onSuccess("直播间数据请求成功了。返回");
+
+        LiveRoomResponse response = new LiveRoomResponse();
+        response.setCode(200);
+        response.setMsg("请求成功");
+
+        LiveRoomData data = new LiveRoomData();
+        data.setName("哈哈哈哈哈哈  :  姜诚");
+
+        response.setData(data);
+
+        mModelCallback.onSuccess(response);
+
         mModelCallback.dismissLoading();
     }
-
 
 
 }

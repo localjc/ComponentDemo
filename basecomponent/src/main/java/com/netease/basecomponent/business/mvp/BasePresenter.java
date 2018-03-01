@@ -1,5 +1,6 @@
 package com.netease.basecomponent.business.mvp;
 
+import com.netease.basecomponent.business.entity.BaseResponse;
 import com.netease.basecomponent.mvp.m.BaseCoreModel;
 import com.netease.basecomponent.mvp.m.IModelCallback;
 import com.netease.basecomponent.mvp.p.BaseMVPPresenter;
@@ -11,8 +12,8 @@ import com.netease.basecomponent.mvp.v.IView;
  * Created by jiangcheng on 2018/3/1.
  */
 
-public abstract class BasePresenter<V extends IView, M extends BaseCoreModel>
-        extends BaseMVPPresenter<V, M> implements IModelCallback {
+public abstract class BasePresenter<V extends IView, M extends BaseCoreModel, R extends BaseResponse>
+        extends BaseMVPPresenter<V, M> implements IModelCallback<R> {
 
     /**
      * 之所以需要传递这两个参数，是因为创建P层 地方在V中，所以将V 传入到P层

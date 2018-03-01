@@ -1,10 +1,12 @@
 package com.netease.basecomponent.mvp.m;
 
+import com.netease.basecomponent.business.entity.IResponse;
+
 /**
  * Created by jiangcheng on 2018/3/1.
  */
 
-public interface IModelCallback {
+public interface IModelCallback<R extends IResponse> {
 
     void showLoading();
 
@@ -12,9 +14,9 @@ public interface IModelCallback {
 
     /**
      * 请求成功，有数据的那种
-     * @param data
+     * @param response
      */
-    void onSuccess(String data);
+    void onSuccess(R response);
 
     /**
      * 请求失败

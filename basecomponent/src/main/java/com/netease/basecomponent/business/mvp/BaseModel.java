@@ -13,4 +13,12 @@ import com.netease.basecomponent.mvp.m.IModelCallback;
 public abstract class BaseModel<L extends IModelCallback> extends BaseCoreModel<L> {
 
 
+
+
+    @Override
+    public void releaseResource() {
+
+    }
+
+
 }

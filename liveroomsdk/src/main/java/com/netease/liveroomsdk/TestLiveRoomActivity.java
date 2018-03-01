@@ -5,8 +5,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.netease.basecomponent.business.mvp.BaseActivity;
-import com.netease.basecomponent.business.view.MintLoadingView;
-import com.netease.basecomponent.mvp.v.ILoading;
 
 /**
  * Created by jiangcheng on 2018/2/28.
@@ -33,7 +31,13 @@ public class TestLiveRoomActivity extends BaseActivity<LiveRoomPresenter> implem
         mBtnTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getPresenter().getLiveRoomData("123");
+                mTvShow.setText("");
+                mTvShow.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getPresenter().getLiveRoomData("123");
+                    }
+                },2000);
             }
         });
     }
@@ -50,13 +54,19 @@ public class TestLiveRoomActivity extends BaseActivity<LiveRoomPresenter> implem
         return new LiveRoomPresenter(this, false);
     }
 
+
     @Override
-    protected ILoading createLoading() {
-        return new MintLoadingView();
+    public void showLiveData(LiveRoomResponse data) {
+        mTvShow.setText(data.getData().getName());
     }
 
     @Override
-    public void showLiveData(String data) {
-        mTvShow.setText(data);
+    public void showEmptyView() {
+
+    }
+
+    @Override
+    public void showErrorView() {
+
     }
 }

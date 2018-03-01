@@ -23,6 +23,11 @@ public interface IModel<L extends IModelCallback> {
     void setContext(Context context);
 
     /**
+     * 释放一些资源
+     */
+    void releaseResource();
+
+    /**
      *
      * rxjava观察者和被观察者，
      *

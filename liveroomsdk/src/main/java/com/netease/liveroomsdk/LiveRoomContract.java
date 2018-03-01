@@ -1,5 +1,6 @@
 package com.netease.liveroomsdk;
 
+import com.netease.basecomponent.business.entity.IResponse;
 import com.netease.basecomponent.mvp.m.IModelCallback;
 import com.netease.basecomponent.mvp.v.IView;
 
@@ -17,10 +18,17 @@ public class LiveRoomContract {
          * 结合view 来展示数据
          * @param data
          */
-        void showLiveData(String data);
+        void showLiveData(LiveRoomResponse data);
+
+        /**
+         * 显示空页面
+         */
+        void showEmptyView();
+
+        void showErrorView();
     }
 
-    public interface ILiveModel extends IModelCallback {
+    public interface ILiveModelCallback extends IModelCallback<LiveRoomResponse> {
 
     }
 }

@@ -10,7 +10,7 @@ import java.util.function.Consumer;
  * Created by jiangcheng on 2018/2/28.
  */
 
-public class BaseCoreModel<L extends IModelCallback> implements IModel<L> {
+public abstract class BaseCoreModel<L extends IModelCallback> implements IModel<L> {
 
     protected Context mContext;
 

@@ -3,8 +3,10 @@ package com.netease.basecomponent.business.mvp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.netease.basecomponent.business.view.MintLoadingView;
 import com.netease.basecomponent.mvp.p.IPresenter;
 import com.netease.basecomponent.mvp.v.BaseMVPActivity;
+import com.netease.basecomponent.mvp.v.ILoading;
 
 /**
  * 与业务相关的基层Activity, 不影响底层MVP层框架
@@ -23,5 +25,10 @@ public abstract class BaseActivity<P extends IPresenter> extends BaseMVPActivity
     }
 
 
+    // 创建每个app的loading的 ,不同的页面可以重写
+    @Override
+    protected ILoading createLoading() {
+        return new MintLoadingView();
+    }
 
 }

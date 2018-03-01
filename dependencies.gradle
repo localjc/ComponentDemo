@@ -1,0 +1,144 @@
+def supportVersion = "26.1.0"
+def retrofitVersion = "2.3.0"
+def okHttpVersion = "3.6.0"
+def butterKnifeVersion = "8.8.1"
+
+def rxJavaVersion = "2.1.7"
+def rxAndroidVersion = "2.0.1"
+
+def leakcanaryVersion = "1.5.1"
+def constraintLayoutVersion = "1.0.2"
+def frescoVersion = "0.14.1"
+def crashlyticsVersion = "2.6.8"
+def multidexVersion = "1.0.1"
+
+// svsdk
+def glideVersion = "3.7.0"
+def gsonVersion = "2.8.0"
+def isoparserVersion = "1.1.21"
+def loggerVersion = "1.3"
+
+// stmobilejni
+def mockitoVersion = "1.10.19"
+
+//app
+def eventbusVersion = "2.4.0"
+def lottieVersion = "2.2.5"
+def systembartintVersion = "1.0.4"
+def cropVersion = "1.0.2"
+def mkloaderVersion = "1.2.0"
+def bannerVersion = "1.4.9"
+def nimlibVersion = "4.5.1"
+def blockcanaryVersion = "1.5.0"
+def bugrptVersion = "latest.release"
+def bugTagsVersion = "latest.integration"
+
+
+project.ext {
+    android = [
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.1",
+            minSdkVersion    : 16,
+            targetSdkVersion : 26
+    ]
+
+/**
+ *  为了规范，约束此文件风格
+ *  dependencies数组中命名风格
+ *  gradle第三方依赖组成规则，groupId:artifactId:version
+ *  key为artifactId，value正常填写，version抽取变量
+ */
+    dependencies = [
+            //android-support
+            "support-v4"                 : "com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7"               : "com.android.support:appcompat-v7:${supportVersion}",
+            "design"                     : "com.android.support:design:${supportVersion}",
+            "recyclerview"               : "com.android.support:recyclerview-v7:${supportVersion}",
+            "cardview"                   : "com.android.support:cardview-v7:${supportVersion}",
+            "constraint-layout"          : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            "multidex"                   : "com.android.support:multidex:${multidexVersion}",
+
+            //rx
+            "rxjava"                     : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            "rxandroid"                  : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+
+            //retrofit
+            "retrofit"                   : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "adapter-rxjava"             : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            "converter-gson"             : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+
+            // okhttp
+            "okhttp"                     : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            "mockwebserver"              : "com.squareup.okhttp3:mockwebserver:${okHttpVersion}",   // 假数据模拟
+            "okhttp3-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",    // log for okhttp
+
+            // fresco
+            "fresco"                     : "com.facebook.fresco:fresco:${frescoVersion}",
+            "animated-gif"               : "com.facebook.fresco:animated-gif:${frescoVersion}",
+            "animated-webp"              : "com.facebook.fresco:animated-webp:${frescoVersion}",
+            "webpsupport"                : "com.facebook.fresco:webpsupport:${frescoVersion}",
+            "imagepipeline-okhttp3"      : "com.facebook.fresco:imagepipeline-okhttp3:${frescoVersion}",
+
+            // glide 图片加载库
+            "glide"                      : "com.github.bumptech.glide:glide:${glideVersion}",
+
+            // gson 解析
+            "gson"                       : "com.google.code.gson:gson:${gsonVersion}",
+
+            // butterknife
+            "butterknife"                : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            "butterknife-compiler"       : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",   // for annotationProcessor
+
+            // leakcanary
+            "leakcanary-android"         : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
+            "leakcanary-android-no-op-r" : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",   // for releaseCompile
+            "leakcanary-android-no-op-t" : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",   // for testCompile
+
+            // fabric
+            "crashlytics"                : "com.crashlytics.sdk.android:crashlytics:${crashlyticsVersion}@aar",
+
+            // 视频解析
+            "isoparser"                  : "com.googlecode.mp4parser:isoparser:${isoparserVersion}",
+
+            // 日志
+            "logger"                     : "com.orhanobut:logger:${loggerVersion}",
+
+            //测试框架
+            "mockito"                    : "org.mockito:mockito-core:${mockitoVersion}",
+
+            "eventbus"                   : "de.greenrobot:eventbus:${eventbusVersion}",
+
+            // 剪裁库
+            "crop"                       : "com.kevin:crop:${cropVersion}",
+
+            //loading动画
+            "mkloader"                   : "com.tuyenmonkey:mkloader:${mkloaderVersion}",
+
+            // 阿里巴巴的lottie动画库
+            "lottie"                     : "com.airbnb.android:lottie:${lottieVersion}",
+
+            "systembartint"              : "com.readystatesoftware.systembartint:systembartint:${systembartintVersion}",
+
+            //云捕
+            "bugrpt"                     : "com.netease.nis.plugin:bugrpt:${bugrptVersion}",
+
+            //bugtags
+            "bugtags-lib"                : "com.bugtags.library:bugtags-lib:${bugTagsVersion}",
+            "bugtags-noop"               : "com.bugtags.library:bugtags-noop:${bugTagsVersion}",
+
+            // 首页banner
+            "banner"                     : "com.youth.banner:banner:${bannerVersion}",
+
+            // nimlib
+            "rts"                        : "com.netease.nimlib:rts:${nimlibVersion}",
+            "avchat"                     : "com.netease.nimlib:avchat:${nimlibVersion}",
+
+            // UI 检测相关
+            "blockcanary-android"        : "com.github.markzhai:blockcanary-android:${blockcanaryVersion}",
+
+            // test
+            "junit"                      : "junit:junit:4.12",
+            "espresso-core"              : "com.android.support.test.espresso:espresso-core:2.2.2",
+    ]
+
+}

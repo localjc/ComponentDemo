@@ -7,7 +7,7 @@ import com.netease.basecomponent.business.mvp.BasePresenter;
  */
 
 public class LiveRoomPresenter extends BasePresenter<LiveRoomContract.ILiveView,
-        LiveRoomModel, LiveRoomResponse> implements LiveRoomContract.ILiveModelCallback {
+        LiveRoomModel, LiveRoomData> implements LiveRoomContract.ILiveModelCallback {
 
     /**
      * 之所以需要传递这两个参数，是因为创建P层 地方在V中，所以将V 传入到P层
@@ -31,14 +31,14 @@ public class LiveRoomPresenter extends BasePresenter<LiveRoomContract.ILiveView,
     }
 
     @Override
-    public void onSuccess(LiveRoomResponse data) {
+    public void onSuccess(LiveRoomData data) {
         if (mView != null) {
             mView.showLiveData(data);
         }
     }
 
     @Override
-    public void onFail() {
+    public void onFail(Throwable throwable, String msg) {
         if (mView != null) {
             mView.showErrorView();
         }

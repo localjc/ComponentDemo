@@ -19,16 +19,10 @@ public class LiveRoomModel extends BaseModel {
 
         mModelCallback.showLoading();
 
-        LiveRoomResponse response = new LiveRoomResponse();
-        response.setCode(200);
-        response.setMsg("请求成功");
-
         LiveRoomData data = new LiveRoomData();
         data.setName("哈哈哈哈哈哈  :  姜诚");
 
-        response.setData(data);
-
-        mModelCallback.onSuccess(response);
+        mModelCallback.onSuccess(data);
 
         mModelCallback.dismissLoading();
     }

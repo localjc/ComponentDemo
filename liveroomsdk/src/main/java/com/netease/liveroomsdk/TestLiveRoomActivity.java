@@ -56,8 +56,8 @@ public class TestLiveRoomActivity extends BaseActivity<LiveRoomPresenter> implem
 
 
     @Override
-    public void showLiveData(LiveRoomResponse data) {
-        mTvShow.setText(data.getData().getName());
+    public void showLiveData(LiveRoomData data) {
+        mTvShow.setText(data.getName());
     }
 
     @Override

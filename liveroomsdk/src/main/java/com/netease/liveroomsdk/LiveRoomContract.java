@@ -18,7 +18,7 @@ public class LiveRoomContract {
          * 结合view 来展示数据
          * @param data
          */
-        void showLiveData(LiveRoomResponse data);
+        void showLiveData(LiveRoomData data);
 
         /**
          * 显示空页面
@@ -28,7 +28,7 @@ public class LiveRoomContract {
         void showErrorView();
     }
 
-    public interface ILiveModelCallback extends IModelCallback<LiveRoomResponse> {
+    public interface ILiveModelCallback extends IModelCallback<LiveRoomData> {
 
     }
 }

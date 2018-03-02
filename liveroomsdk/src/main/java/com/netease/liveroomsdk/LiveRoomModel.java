@@ -18,9 +18,6 @@ public class LiveRoomModel extends BaseModel<LiveRoomContract.ILiveModelCallback
         mModelCallback.showLoading();
         API retrofit = mNetworkManager.getRetrofit(API.class);
         subscribe(retrofit.getLiveRoomData(1,10));
-
-
-
     }
 
     @Override

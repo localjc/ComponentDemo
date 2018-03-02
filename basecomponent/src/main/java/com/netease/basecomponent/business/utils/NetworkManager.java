@@ -2,6 +2,7 @@ package com.netease.basecomponent.business.utils;
 
 import com.netease.basecomponent.business.entity.BaseResponse;
 import com.netease.basecomponent.business.entity.IData;
+import com.netease.basecomponent.business.exceptions.NetworkException;
 import com.netease.basecomponent.business.mvp.BaseModel;
 
 import io.reactivex.Observable;
@@ -22,18 +23,20 @@ public class NetworkManager {
         return retrofit.create(aClass);
     }
 
-    public <T extends IData> void subscribe(Consumer<T> consumer, Observable<BaseResponse<T>> observable) {
+    public <T extends IData> void subscribe(Consumer<T> consumer, Observable<BaseResponse<T>> observable, final NetworkException<T> ne) {
         observable.compose(RxUtil.<BaseResponse<T>>fixScheduler()).compose(RxUtil.<T>handleResult()).subscribe(consumer, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
+                ne.doException(throwable);
             }
         });
     }
 
-    public <T extends IData> void subscribe(Consumer<T> consumer, Observable<BaseResponse<T>> observable,Scheduler scheduler) {
+    public <T extends IData> void subscribe(Consumer<T> consumer, Observable<BaseResponse<T>> observable, final NetworkException<T> ne, Scheduler scheduler) {
         observable.compose(RxUtil.<BaseResponse<T>>fixScheduler()).compose(RxUtil.<T>handleResult()).subscribe(consumer, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
+                ne.doException(throwable);
             }
         });
     }

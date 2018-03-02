@@ -1,6 +1,5 @@
 package com.netease.basecomponent.business.mvp;
 
-import com.netease.basecomponent.business.entity.BaseResponse;
 import com.netease.basecomponent.business.entity.IData;
 import com.netease.basecomponent.mvp.m.BaseCoreModel;
 import com.netease.basecomponent.mvp.m.IModelCallback;

@@ -1,6 +1,7 @@
 package com.netease.liveroomsdk;
 
 import com.netease.basecomponent.business.mvp.BasePresenter;
+import com.netease.liveroomsdk.domain.LiveRoomData;
 
 /**
  * Created by jiangcheng on 2018/2/28.

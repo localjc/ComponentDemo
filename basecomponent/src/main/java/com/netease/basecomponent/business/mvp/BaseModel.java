@@ -1,5 +1,6 @@
 package com.netease.basecomponent.business.mvp;
 
+import com.netease.basecomponent.business.entity.IData;
 import com.netease.basecomponent.mvp.m.BaseCoreModel;
 import com.netease.basecomponent.mvp.m.IModelCallback;
 
@@ -10,7 +11,7 @@ import com.netease.basecomponent.mvp.m.IModelCallback;
  * Created by jiangcheng on 2018/3/1.
  */
 
-public abstract class BaseModel<L extends IModelCallback> extends BaseCoreModel<L> {
+public abstract class BaseModel<L extends IModelCallback<T>,T extends IData> extends BaseCoreModel<L,T> {
 
 
 

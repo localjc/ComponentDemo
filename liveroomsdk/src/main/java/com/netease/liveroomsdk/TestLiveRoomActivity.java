@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.netease.basecomponent.business.mvp.BaseActivity;
+import com.netease.liveroomsdk.domain.LiveRoomData;
 
 /**
  * Created by jiangcheng on 2018/2/28.
@@ -57,7 +58,7 @@ public class TestLiveRoomActivity extends BaseActivity<LiveRoomPresenter> implem
 
     @Override
     public void showLiveData(LiveRoomData data) {
-        mTvShow.setText(data.getName());
+        mTvShow.setText("pageCount :"+data.getPageInfo().getPageCount());
     }
 
     @Override

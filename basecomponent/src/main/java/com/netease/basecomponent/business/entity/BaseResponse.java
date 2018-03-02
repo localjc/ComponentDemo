@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by jiangcheng on 2018/3/1.
  */
 
-public abstract class BaseResponse<T extends IData> implements Serializable, IResponse {
+public class BaseResponse<T extends IData> implements Serializable, IResponse {
 
     private static final long serialVersionUID = 7645717566023532013L;
 
@@ -29,6 +29,11 @@ public abstract class BaseResponse<T extends IData> implements Serializable, IRe
 
     public String getMsg() {
         return msg;
+    }
+
+    @Override
+    public boolean hasData() {
+        return false;
     }
 
     public void setMsg(String msg) {

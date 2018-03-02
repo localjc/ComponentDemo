@@ -1,8 +1,8 @@
 package com.netease.liveroomsdk;
 
-import com.netease.basecomponent.business.entity.IResponse;
 import com.netease.basecomponent.mvp.m.IModelCallback;
 import com.netease.basecomponent.mvp.v.IView;
+import com.netease.liveroomsdk.domain.LiveRoomData;
 
 /**
  * 直播界面的契约类，减少接口类过多的问题
